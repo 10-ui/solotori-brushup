@@ -8,6 +8,25 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        bounces: 'bounces 1s infinite alternate',
+        slide: 'slide 1s infinite alternate',
+      },
+      keyframes: {
+        bounces: {
+          '0%, 100%': {
+            transform: 'translate(-50% , -10%)',
+          },
+          '50%': { transform: 'translate(-50% , 0%)' },
+        },
+        slide: {
+          '0%': {
+            transform: 'translateX(-15%)',
+          },
+          '50%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(15%)' },
+        },
+      },
       colors: {
         main: '#009B9F',
         accent: '#E07510',
@@ -19,6 +38,7 @@ const config: Config = {
         error: '#ff4949',
       },
       spacing: {
+        15: '60px',
         25: '100px',
         30: '120px',
         50: '200px',
