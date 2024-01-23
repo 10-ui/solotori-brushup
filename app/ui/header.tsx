@@ -53,37 +53,35 @@ export default function Header() {
   }
   return (
     <>
-      <header>
-        <div
-          className={clsx(
-            'fades flex z-20 fixed top-0 left-0 px-6 items-center justify-between h-16 w-390 bg-bases border-b border-input',
-            isVisible && 'hide'
-          )}>
-          <h1>
-            <Link href="/">
-              <Logo />
-            </Link>
-          </h1>
-          <div className="hbg-menu" onClick={toggleMenu}>
-            <div
-              className={clsx(
-                'menu relative w-6 h-0.5 rounded-sm  before:absolute before:w-6 before:h-0.5 before:bg-input before:rounded-sm after:absolute after:w-6 after:h-0.5 after:bg-input after:rounded-sm',
-                {
-                  'bg-input before:-top-2 after:top-2':
-                    !isMenuOpen,
-                },
-                {
-                  'bg-transparent before:top-0 before:rotate-45 after:top-0 after:-rotate-45':
-                    isMenuOpen,
-                }
-              )}></div>
-          </div>
+      <header
+        className={clsx(
+          'fades flex z-10 fixed top-0 left-1/2 -translate-x-1/2 px-6 items-center justify-between h-16 w-390 bg-bases border-b border-input',
+          isVisible && 'hide'
+        )}>
+        <h1 className="z-20">
+          <Link href="/">
+            <Logo />
+          </Link>
+        </h1>
+        <div className="hbg-menu z-20" onClick={toggleMenu}>
+          <div
+            className={clsx(
+              'menu relative w-6 h-0.5 rounded-sm  before:absolute before:w-6 before:h-0.5 before:bg-input before:rounded-sm after:absolute after:w-6 after:h-0.5 after:bg-input after:rounded-sm',
+              {
+                'bg-input before:-top-2 after:top-2':
+                  !isMenuOpen,
+              },
+              {
+                'bg-transparent before:top-0 before:rotate-45 after:top-0 after:-rotate-45':
+                  isMenuOpen,
+              }
+            )}></div>
         </div>
         <nav
           className={clsx(
             'fixed z-10 w-390 h-screen bg-bases transition-all ease-in duration-300 top-0 pt-20 px-6',
-            { '-right-full': !isMenuOpen },
-            { 'right-0': isMenuOpen }
+            { '-right-full opacity-0': !isMenuOpen },
+            { 'right-0 opacity-100': isMenuOpen }
           )}>
           <ul className="flex">
             <li className="mr-1">

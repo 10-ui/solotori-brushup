@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  nickname String  @unique
+  id       Int     @id @default(autoincrement())
+  email    String  @unique
+  password String
+  bingos   Bingo[]
+}
+
+model Bingo {
+  id     Int     @id @default(autoincrement())
+  user   User    @relation(fields: [userId], references: [id])
+  userId Int
+  c1     Boolean @default(false)
+  c2     Boolean @default(false)
+  c3     Boolean @default(false)
+  c4     Boolean @default(false)
+  c5     Boolean @default(true)
+  c6     Boolean @default(false)
+  c7     Boolean @default(false)
+  c8     Boolean @default(false)
+  c9     Boolean @default(false)
+}

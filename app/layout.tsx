@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notoSans } from '@/app/lib/fonts';
 import Favicon from '@/public/images/favicon.ico';
-import '@/app/styles/globals.scss';
+import '@/styles/globals.scss';
 import Slider from '@/app/ui/home/fvSlider';
 import Header from '@/app/ui/header';
 import Footer from '@/app/ui/footer';
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${notoSans.className} bg-desktop text-white grid`}>
+        className={`${notoSans.className} bg-desktop text-white grid justify-center`}>
           <Header/>
         <main>
           <Slider />
