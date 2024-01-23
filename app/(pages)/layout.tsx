@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notoSans } from '@/app/lib/fonts';
 import Favicon from '@/public/images/favicon.ico';
 import '@/app/styles/globals.scss';
+import Header from '@/app/ui/header';
 import Footer from '@/app/ui/footer';
 
 export const metadata: Metadata = {
@@ -18,14 +19,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
-      <body
-        className={`${notoSans.className} bg-desktop text-white`}>
-        <main className="w-390 bg-main box-content pb-160 pt-25 ">
-          <div className="w-350 mx-5">{children}</div>
-        </main>
-        <Footer />
-      </body>
-    </html>
+    <>
+      <main className="w-390 bg-main box-content pb-160 pt-25 ">
+        <div className="w-350 mx-5">{children}</div>
+      </main>
+    </>
   );
 }

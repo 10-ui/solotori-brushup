@@ -12,6 +12,7 @@ export default function Goto() {
   const [ealt, esetAlt] = useState('');
   const [fsrc, fsetSrc] = useState('');
   const [falt, fsetAlt] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
   const ref = useRef(null);
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -47,13 +48,8 @@ export default function Goto() {
 
     getApi()
       .then((response) => {
-        console.log(response.imgs.eventDetails.events.src);
-        console.log(response.imgs.eventDetails.events.alt);
         const ran = response.imgs.eventDetails.events.alt;
         const dom = response.imgs.eventDetails.events.src;
-        console.log(
-          ran[Math.floor(Math.random() * ran.length)]
-        );
         const fmath = Math.floor(
           Math.random() * ran.length
         );
@@ -66,10 +62,9 @@ export default function Goto() {
         esetAlt(ran[emath]);
 
         ran[Math.floor(Math.random() * ran.length)];
-
         setSrc(response.imgs.conceptDetails.concepts.src);
-
         setAlt(response.imgs.conceptDetails.concepts.alt);
+        setIsLoading(false);
       })
       .catch(() => {
         console.log('err');
@@ -86,17 +81,31 @@ export default function Goto() {
         その役割、はずしてみませんか
       </h3>
       <div className="w-370 bg-bases mx-[10px] px-[15px] py-4 rounded-3xl">
-        <img
-          src={src}
-          alt={alt}
-          className="mb-2 rounded-2xl"
-        />
-        <img
-          src={esrc}
-          alt={ealt}
-          className="mb-2 rounded-2xl"
-        />
-        <img src={fsrc} alt={falt} className="rounded-2xl" />
+        {isLoading ? (
+          <>
+            <div className="mb-2 rounded-2xl bg-slate-700 w-full h-[191.5px] animate-pulse"></div>
+            <div className="mb-2 rounded-2xl bg-slate-700 w-full h-[191.5px] animate-pulse"></div>
+            <div className="mb-2 rounded-2xl bg-slate-700 w-full h-[191.5px] animate-pulse"></div>
+          </>
+        ) : (
+          <>
+            <img
+              src={src}
+              alt={alt}
+              className="mb-2 rounded-2xl"
+            />{' '}
+            <img
+              src={esrc}
+              alt={ealt}
+              className="mb-2 rounded-2xl"
+            />
+            <img
+              src={fsrc}
+              alt={falt}
+              className="rounded-2xl"
+            />
+          </>
+        )}
       </div>
     </div>
   );
