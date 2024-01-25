@@ -87,6 +87,11 @@ export default function Page() {
             complete="family-name"
             {...register('sei', {
               required: '姓を入力してください',
+              pattern: {
+                value: /^([ぁ-んァ-ン一-龥])$/,
+                message:
+                  '全角ひらがな、全角カタカナ、漢字のみ入力可能です',
+              },
             })}
           />
           {errors.mei?.message && (
@@ -101,6 +106,11 @@ export default function Page() {
             complete="given-name"
             {...register('mei', {
               required: '名を入力してください',
+              pattern: {
+                value: /^([ぁ-んァ-ン一-龥])$/,
+                message:
+                  '全角ひらがな、全角カタカナ、漢字のみ入力可能です',
+              },
             })}
           />
         </Block>
@@ -117,7 +127,7 @@ export default function Page() {
             placeholder="contact@solotori.jp"
             complete="email"
             {...register('email', {
-              required: true,
+              required: 'メールアドレスを入力してください',
               pattern: {
                 value: /[\w\-\._]+@[\w\-\._]+\.[A-Za-z]+/,
                 message: `'@'、'.'が必要です`,
@@ -145,7 +155,7 @@ export default function Page() {
               placeholder="1234567"
               autoComplete="postal-code"
               {...register('postcode', {
-                required: true,
+                required: '郵便番号を入力してください',
                 pattern: {
                   value: /^\d{7}$/,
                   message:
@@ -155,7 +165,7 @@ export default function Page() {
               onChange={setCode}
             />
             <button
-              className="border-bases h-12 box-border border w-50 text-base ml-3 py-3 px-4 rounded-full"
+              className="border-bases h-12 box-border border w-50 text-base ml-3 py-3 px-4 rounded-full leading-none"
               onClick={searchAddress}
               type="button">
               郵便番号から自動入力

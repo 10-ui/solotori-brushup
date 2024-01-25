@@ -22,7 +22,6 @@ export default function Signup() {
   ) => {
     console.log(data);
 
-
     try {
       const { error: signUpError } =
         await supabase.auth.signUp({
@@ -124,7 +123,7 @@ export default function Signup() {
             placeholder="パスワード(5文字以上)"
             complete="new-password"
             {...register('password', {
-              required: true,
+              required: 'パスワードを入力してください',
               minLength: {
                 value: 5,
                 message:
@@ -149,7 +148,8 @@ export default function Signup() {
             placeholder="パスワード(再入力)"
             complete="new-password"
             {...register('passwordConf', {
-              required: true,
+              required:
+                'パスワード(再入力)を入力してください',
               minLength: {
                 value: 5,
                 message:

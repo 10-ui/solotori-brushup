@@ -16,6 +16,21 @@ export type handbookUserData = {
   buildingName: string;
   submit: any;
 };
+export type handleChange = {
+  onClick: () => void;
+};
+export type passwordResetData = {
+  password: string;
+  passwordConf: string;
+};
+
+export type userLoginData = {
+  email: string;
+  password: string;
+};
+export type userResetData = {
+  email: string;
+};
 
 export type signUpUserData = {
   nickname: string;
@@ -34,3 +49,6 @@ type inputProps = {
 
 export type inputComponentProps =
   ComponentPropsWithRef<'input'> & inputProps;
+
+export const fetcher = (url: string | URL | Request) =>
+  fetch(url).then((res) => res.json());
