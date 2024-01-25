@@ -1,9 +1,6 @@
 import type { Metadata } from 'next';
-import { notoSans } from '@/app/lib/fonts';
 import Favicon from '@/public/images/favicon.ico';
-import '@/app/styles/globals.scss';
-import Header from '@/app/ui/header';
-import Footer from '@/app/ui/footer';
+import '@/styles/globals.scss';
 
 export const metadata: Metadata = {
   title: 'ソロトリ利用者増加促進サイト',
@@ -13,7 +10,7 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function RootLayout({
+export default function PagesLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

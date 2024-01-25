@@ -17,6 +17,13 @@ export type handbookUserData = {
   submit: any;
 };
 
+export type signUpUserData = {
+  nickname: string;
+  email: string;
+  password: string;
+  passwordConf: string;
+};
+
 type inputProps = {
   type: string;
   name: string;
