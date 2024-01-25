@@ -4,7 +4,7 @@ import {
 } from '@/app/lib/types';
 import { forwardRef } from 'react';
 
-const Input = forwardRef<
+export const Input = forwardRef<
   HTMLInputElement,
   inputComponentProps
 >(
