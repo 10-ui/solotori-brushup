@@ -3,15 +3,26 @@ import Sidebar from '@/app/ui/home/sideBar';
 import Lead from './ui/home/lead';
 import Goto from './ui/home/goto';
 import Instagram from './ui/home/instagram';
+import Slider from '@/app/ui/home/fvSlider';
+import Header from '@/app/ui/header';
+import Footer from '@/app/ui/footer';
 
 export default function Home() {
   return (
     <>
-      <Copies />
-      <Sidebar />
-      <Lead />
-      <Goto />
-      <Instagram />
+      <Header />
+      <main>
+        <Slider />
+        <div className="w-390 bg-main box-content pb-160 rounded-t-full -mt-16">
+          {' '}
+          <Copies />
+          <Sidebar />
+          <Lead />
+          <Goto />
+          <Instagram />
+        </div>
+      </main>
+      <Footer />
     </>
   );
 }
