@@ -4,7 +4,7 @@ import {
 } from '@/app/lib/types';
 import { forwardRef } from 'react';
 
-export const Input = forwardRef<
+const Input = forwardRef<
   HTMLInputElement,
   inputComponentProps
 >(
@@ -33,6 +33,8 @@ export const Input = forwardRef<
     );
   }
 );
+
+Input.displayName = 'Input';
 
 export function Block({
   children,

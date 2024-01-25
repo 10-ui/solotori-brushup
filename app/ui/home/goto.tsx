@@ -48,8 +48,8 @@ export default function Goto() {
 
     getApi()
       .then((response) => {
-        const ran = response.imgs.eventDetails.events.alt;
-        const dom = response.imgs.eventDetails.events.src;
+        const ran = response.Images.eventDetails.events.alt;
+        const dom = response.Images.eventDetails.events.src;
         const fmath = Math.floor(
           Math.random() * ran.length
         );
@@ -62,8 +62,8 @@ export default function Goto() {
         esetAlt(ran[emath]);
 
         ran[Math.floor(Math.random() * ran.length)];
-        setSrc(response.imgs.conceptDetails.concepts.src);
-        setAlt(response.imgs.conceptDetails.concepts.alt);
+        setSrc(response.Images.conceptDetails.concepts.src);
+        setAlt(response.Images.conceptDetails.concepts.alt);
         setIsLoading(false);
       })
       .catch(() => {
@@ -89,17 +89,17 @@ export default function Goto() {
           </>
         ) : (
           <>
-            <img
+            <Image
               src={src}
               alt={alt}
               className="mb-2 rounded-2xl"
-            />{' '}
-            <img
+            />
+            <Image
               src={esrc}
               alt={ealt}
               className="mb-2 rounded-2xl"
             />
-            <img
+            <Image
               src={fsrc}
               alt={falt}
               className="rounded-2xl"
