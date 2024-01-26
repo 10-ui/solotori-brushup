@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { Input, Label } from '@/app/ui/formComonents';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { userLoginData } from '@/app/lib/types';
-import Forgot from './forgot/page';
+import Forgot from './_forgot/page';
 
 export default function Login() {
   const router = useRouter();
@@ -170,7 +170,7 @@ export default function Login() {
       <section
         className={`mt-100 mb-160 ${reset ? '' : 'hidden'}`}
         id="forgot">
-        <Forgot onClick={toggleReset}/>
+        {/* <Forgot onClick={toggleReset}/> */}
       </section>
     </>
   );

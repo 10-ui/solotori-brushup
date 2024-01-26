@@ -12,7 +12,6 @@ export default function Page(props: handleChange) {
   const {
     register,
     handleSubmit,
-    setValue,
     formState: { errors },
   } = useForm<userResetData>({ mode: 'onChange' });
   const onSubmit: SubmitHandler<userResetData> = async (
