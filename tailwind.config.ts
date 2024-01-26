@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      dropShadow: {
+        ttl: '3px 5px 2px rgba(255, 255, 255, 0.25)',
+      },
       animation: {
         bounces: 'bounces 1s infinite alternate',
         slide: 'slide 1s infinite alternate',
@@ -36,6 +39,8 @@ const config: Config = {
         zabuton: '#00000066',
         desktop: '#009B9FBF',
         error: '#ff4949',
+        bh: '#DA71A2',
+        bb: '#D5949A',
       },
       spacing: {
         15: '60px',
@@ -43,6 +48,7 @@ const config: Config = {
         30: '120px',
         50: '200px',
         160: '160px',
+        250: '250px',
         350: '350px',
         390: '390px',
       },
