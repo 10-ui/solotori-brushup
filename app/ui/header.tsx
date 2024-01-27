@@ -63,7 +63,9 @@ export default function Header() {
             <Logo />
           </Link>
         </h1>
-        <div className="hbg-menu z-20" onClick={toggleMenu}>
+        <div
+          className="hbg-menu z-20 h-6 translate-y-[10px]"
+          onClick={toggleMenu}>
           <div
             className={clsx(
               'menu relative w-6 h-0.5 rounded-sm  before:absolute before:w-6 before:h-0.5 before:bg-input before:rounded-sm after:absolute after:w-6 after:h-0.5 after:bg-input after:rounded-sm',

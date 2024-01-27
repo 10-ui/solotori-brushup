@@ -5,15 +5,12 @@ import Goto from './ui/home/goto';
 import Instagram from './ui/home/instagram';
 import Slider from '@/app/ui/home/fvSlider';
 
-
 export default function Home() {
   return (
     <>
-
       <main>
         <Slider />
         <div className="w-390 bg-main box-content pb-160 rounded-t-full -mt-16">
-          {' '}
           <Copies />
           <Sidebar />
           <Lead />
