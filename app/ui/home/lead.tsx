@@ -4,7 +4,7 @@ import Train from '@/public/images/train.jpg';
 export default function Lead() {
   return (
     <section className="-mt-70 relative z-[5] bg-main rounded-t-[42px]">
-      <h2 className="text-4xl py-3 px-9 font-bold mb-8">
+      <h2 className="text-4xl py-3 px-9 font-bold mb-8 pt-8">
         自分を
         <br />
         「再認識」する。
